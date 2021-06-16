@@ -87,7 +87,7 @@ class PairsTradingAlgorithm(QCAlgorithm):
                           observation_covariance=1,
                           transition_covariance=np.eye(2))
 
-        state_means, = kf.filter(y)
+        state_means, _ = kf.filter(y)
 
         slope = state_means[-1, 0]
         intercept = state_means[-1, 1]
